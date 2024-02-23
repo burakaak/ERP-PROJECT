@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="784a6c0fd78242f08d99a81494a151a2" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="FabrikaDbModel.AdminTb" Width="1.5" PointX="0.875" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FabrikaDbModel.CagriTb" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FabrikaDbModel.DepartmanTb" Width="1.5" PointX="2.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FabrikaDbModel.GorevDetayTb" Width="1.5" PointX="7" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FabrikaDbModel.GorevTb" Width="1.5" PointX="5.125" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FabrikaDbModel.MusteriTb" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="FabrikaDbModel.FK_CagriTb_MusteriTb" ManuallyRouted="false" />
+        <AssociationConnector Association="FabrikaDbModel.FK_GorevDetayTb_GorevTb" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FabrikaDbModel.CagriDetayTb" Width="1.5" PointX="5.25" PointY="1.375" />
+        <AssociationConnector Association="FabrikaDbModel.FK_CagriDetayTb_CagriTb" />
+        <EntityTypeShape EntityType="FabrikaDbModel.MesajlarTb" Width="1.5" PointX="3.25" PointY="4.875" />
+        <AssociationConnector Association="FabrikaDbModel.FK_MesajlarTb_MusteriTb" />
+        <AssociationConnector Association="FabrikaDbModel.FK_MesajlarTb_MusteriTb1" />
+        <EntityTypeShape EntityType="FabrikaDbModel.PersonelBilgileriTb" Width="1.5" PointX="5.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

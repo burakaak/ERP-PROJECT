@@ -1,0 +1,354 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ABD99AA-0432-4FFB-9DCF-4654485C7E6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ErpProject</RootNamespace>
+    <AssemblyName>ErpProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\burak\OneDrive\Masaüstü\ERP Proje\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C5E97442B4EE681AC8E415E0EC8D758BFD5DBAD7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ErpProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v23.2" />
+    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.2" />
+    <Reference Include="DevExpress.Data.v23.2" />
+    <Reference Include="DevExpress.Printing.v23.2.Core" />
+    <Reference Include="DevExpress.Utils.v23.2" />
+    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v23.2" />
+    <Reference Include="DevExpress.Sparkline.v23.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v23.2" />
+    <Reference Include="DevExpress.Drawing.v23.2" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\AdminTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CagriDetayTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CagriTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DepartmanTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FabrikaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FabrikaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FabrikaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FabrikaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FabrikaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GorevDetayTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GorevTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MesajlarTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MusteriTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonelBilgileriTb.cs">
+      <DependentUpon>FabrikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\AktifCagrilarFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\AktifCagrilarFrm.Designer.cs">
+      <DependentUpon>AktifCagrilarFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\AnaSayfaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\AnaSayfaFrm.Designer.cs">
+      <DependentUpon>AnaSayfaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\CagriAtamaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\CagriAtamaFrm.Designer.cs">
+      <DependentUpon>CagriAtamaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Departmanlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Departmanlar.Designer.cs">
+      <DependentUpon>Departmanlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\GorevDetayFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\GorevDetayFrm.Designer.cs">
+      <DependentUpon>GorevDetayFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\GorevFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\GorevFrm.Designer.cs">
+      <DependentUpon>GorevFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\GorevListesiFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\GorevListesiFrm.Designer.cs">
+      <DependentUpon>GorevListesiFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\PersonellerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\PersonellerFrm.Designer.cs">
+      <DependentUpon>PersonellerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\PersonelİstatistikFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\PersonelİstatistikFrm.Designer.cs">
+      <DependentUpon>PersonelİstatistikFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\AktifGorevlerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\AktifGorevlerFrm.Designer.cs">
+      <DependentUpon>AktifGorevlerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\CagriDetayGirisFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\CagriDetayGirisFrm.Designer.cs">
+      <DependentUpon>CagriDetayGirisFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\CagriListesiFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\CagriListesiFrm.Designer.cs">
+      <DependentUpon>CagriListesiFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\PasifGorevlerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\PasifGorevlerFrm.Designer.cs">
+      <DependentUpon>PasifGorevlerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\PersonelFormuFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGorevFormlari\PersonelFormuFrm.Designer.cs">
+      <DependentUpon>PersonelFormuFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\AktifCagrilarFrm.resx">
+      <DependentUpon>AktifCagrilarFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\AnaSayfaFrm.resx">
+      <DependentUpon>AnaSayfaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\CagriAtamaFrm.resx">
+      <DependentUpon>CagriAtamaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Departmanlar.resx">
+      <DependentUpon>Departmanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\GorevDetayFrm.resx">
+      <DependentUpon>GorevDetayFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\GorevFrm.resx">
+      <DependentUpon>GorevFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\GorevListesiFrm.resx">
+      <DependentUpon>GorevListesiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\PersonellerFrm.resx">
+      <DependentUpon>PersonellerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\PersonelİstatistikFrm.resx">
+      <DependentUpon>PersonelİstatistikFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGorevFormlari\AktifGorevlerFrm.resx">
+      <DependentUpon>AktifGorevlerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGorevFormlari\CagriDetayGirisFrm.resx">
+      <DependentUpon>CagriDetayGirisFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGorevFormlari\CagriListesiFrm.resx">
+      <DependentUpon>CagriListesiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGorevFormlari\PasifGorevlerFrm.resx">
+      <DependentUpon>PasifGorevlerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGorevFormlari\PersonelFormuFrm.resx">
+      <DependentUpon>PersonelFormuFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <EntityDeploy Include="Entity\FabrikaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FabrikaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\FabrikaModel.edmx.diagram">
+      <DependentUpon>FabrikaModel.edmx</DependentUpon>
+    </None>
+    <None Include="ErpProject_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\FabrikaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FabrikaModel.Context.cs</LastGenOutput>
+      <DependentUpon>FabrikaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\FabrikaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FabrikaModel.edmx</DependentUpon>
+      <LastGenOutput>FabrikaModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

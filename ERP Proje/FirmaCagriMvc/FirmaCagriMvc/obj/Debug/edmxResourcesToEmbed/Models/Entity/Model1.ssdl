@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FabrikaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici" Type="nvarchar" MaxLength="10" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CagriDetayTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cagri" Type="int" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+    <Property Name="Tarih" Type="date" />
+    <Property Name="Saat" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="CagriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Musteri" Type="int" />
+    <Property Name="Konu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="nvarchar(max)" />
+    <Property Name="Durum" Type="bit" />
+    <Property Name="Tarih" Type="date" />
+  </EntityType>
+  <EntityType Name="DepartmanTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmanId" Type="int" />
+    <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sorumlu" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonelSayisi" Type="int" />
+  </EntityType>
+  <EntityType Name="GorevDetayTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gorev" Type="int" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tarih" Type="date" />
+    <Property Name="Saat" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="GorevTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GorevVeren" Type="int" />
+    <Property Name="GorevAlan" Type="int" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="Durum" Type="bit" />
+    <Property Name="Tarih" Type="date" />
+  </EntityType>
+  <EntityType Name="MesajlarTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gonderen" Type="int" />
+    <Property Name="Alici" Type="int" />
+    <Property Name="Konu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mesaj" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="date" />
+    <Property Name="Durum" Type="bit" />
+  </EntityType>
+  <EntityType Name="MusteriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirmaAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yetkili" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="20" />
+    <Property Name="Sektor" Type="nvarchar" MaxLength="50" />
+    <Property Name="il" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gorsel" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PersonelBilgileriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoyAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tc" Type="nvarchar" MaxLength="11" />
+    <Property Name="Pozisyon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" />
+    <Property Name="Departman" Type="nvarchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="date" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="15" />
+    <Property Name="Yonetici" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ucret" Type="int" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Durum" Type="bit" />
+  </EntityType>
+  <Association Name="FK_CagriDetayTb_CagriTb">
+    <End Role="CagriTb" Type="Self.CagriTb" Multiplicity="0..1" />
+    <End Role="CagriDetayTb" Type="Self.CagriDetayTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CagriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CagriDetayTb">
+        <PropertyRef Name="Cagri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CagriTb_MusteriTb">
+    <End Role="MusteriTb" Type="Self.MusteriTb" Multiplicity="0..1" />
+    <End Role="CagriTb" Type="Self.CagriTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CagriTb">
+        <PropertyRef Name="Musteri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDetayTb_GorevTb">
+    <End Role="GorevTb" Type="Self.GorevTb" Multiplicity="0..1" />
+    <End Role="GorevDetayTb" Type="Self.GorevDetayTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GorevTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GorevDetayTb">
+        <PropertyRef Name="Gorev" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesajlarTb_MusteriTb">
+    <End Role="MusteriTb" Type="Self.MusteriTb" Multiplicity="0..1" />
+    <End Role="MesajlarTb" Type="Self.MesajlarTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesajlarTb">
+        <PropertyRef Name="Gonderen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesajlarTb_MusteriTb1">
+    <End Role="MusteriTb" Type="Self.MusteriTb" Multiplicity="0..1" />
+    <End Role="MesajlarTb" Type="Self.MesajlarTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesajlarTb">
+        <PropertyRef Name="Alici" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FabrikaDbModelStoreContainer">
+    <EntitySet Name="AdminTb" EntityType="Self.AdminTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CagriDetayTb" EntityType="Self.CagriDetayTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CagriTb" EntityType="Self.CagriTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepartmanTb" EntityType="Self.DepartmanTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GorevDetayTb" EntityType="Self.GorevDetayTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GorevTb" EntityType="Self.GorevTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MesajlarTb" EntityType="Self.MesajlarTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MusteriTb" EntityType="Self.MusteriTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonelBilgileriTb" EntityType="Self.PersonelBilgileriTb" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CagriDetayTb_CagriTb" Association="Self.FK_CagriDetayTb_CagriTb">
+      <End Role="CagriTb" EntitySet="CagriTb" />
+      <End Role="CagriDetayTb" EntitySet="CagriDetayTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CagriTb_MusteriTb" Association="Self.FK_CagriTb_MusteriTb">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="CagriTb" EntitySet="CagriTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDetayTb_GorevTb" Association="Self.FK_GorevDetayTb_GorevTb">
+      <End Role="GorevTb" EntitySet="GorevTb" />
+      <End Role="GorevDetayTb" EntitySet="GorevDetayTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesajlarTb_MusteriTb" Association="Self.FK_MesajlarTb_MusteriTb">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="MesajlarTb" EntitySet="MesajlarTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesajlarTb_MusteriTb1" Association="Self.FK_MesajlarTb_MusteriTb1">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="MesajlarTb" EntitySet="MesajlarTb" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

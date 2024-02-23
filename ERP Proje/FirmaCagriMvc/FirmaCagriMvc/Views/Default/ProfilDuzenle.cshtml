@@ -1,0 +1,37 @@
+﻿@model FirmaCagriMvc.Models.Entity.MusteriTb
+@{
+    ViewBag.Title = "ProfilDuzenle";
+    Layout = "~/Views/Shared/MusteriLayout.cshtml";
+}
+
+<h2>Profil Düzenleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("ProfilDuzenle", "Default", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Firma Adı")
+    @Html.TextBoxFor(x => x.FirmaAdi, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Şifre")
+    @Html.PasswordFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Sektör")
+    @Html.TextBoxFor(x => x.Sektor, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("İl")
+    @Html.TextBoxFor(x => x.il, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Adres")
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Değişiklikleri Kaydet</button>
+}  
+

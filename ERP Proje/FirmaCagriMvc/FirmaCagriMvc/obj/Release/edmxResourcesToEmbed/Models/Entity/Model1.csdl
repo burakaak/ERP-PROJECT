@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FabrikaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CagriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Musteri" Type="Int32" />
+    <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="Boolean" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="MusteriTb" Relationship="Self.FK_CagriTb_MusteriTb" FromRole="CagriTb" ToRole="MusteriTb" />
+    <NavigationProperty Name="CagriDetayTb" Relationship="FabrikaDbModel.FK_CagriDetayTb_CagriTb" FromRole="CagriTb" ToRole="CagriDetayTb" />
+  </EntityType>
+  <EntityType Name="DepartmanTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmanId" Type="Int32" />
+    <Property Name="DepartmanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sorumlu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSayisi" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GorevDetayTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gorev" Type="Int32" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <Property Name="Saat" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="GorevTb" Relationship="Self.FK_GorevDetayTb_GorevTb" FromRole="GorevDetayTb" ToRole="GorevTb" />
+  </EntityType>
+  <EntityType Name="GorevTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GorevVeren" Type="Int32" />
+    <Property Name="GorevAlan" Type="Int32" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="Boolean" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="GorevDetayTb" Relationship="Self.FK_GorevDetayTb_GorevTb" FromRole="GorevTb" ToRole="GorevDetayTb" />
+  </EntityType>
+  <EntityType Name="MusteriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sektor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="il" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CagriTb" Relationship="Self.FK_CagriTb_MusteriTb" FromRole="MusteriTb" ToRole="CagriTb" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Yetkili" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gorsel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MesajlarTb" Relationship="FabrikaDbModel.FK_MesajlarTb_MusteriTb" FromRole="MusteriTb" ToRole="MesajlarTb" />
+    <NavigationProperty Name="MesajlarTb1" Relationship="FabrikaDbModel.FK_MesajlarTb_MusteriTb1" FromRole="MusteriTb" ToRole="MesajlarTb" />
+  </EntityType>
+  <Association Name="FK_CagriTb_MusteriTb">
+    <End Role="MusteriTb" Type="Self.MusteriTb" Multiplicity="0..1" />
+    <End Role="CagriTb" Type="Self.CagriTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CagriTb">
+        <PropertyRef Name="Musteri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GorevDetayTb_GorevTb">
+    <End Role="GorevTb" Type="Self.GorevTb" Multiplicity="0..1" />
+    <End Role="GorevDetayTb" Type="Self.GorevDetayTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GorevTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GorevDetayTb">
+        <PropertyRef Name="Gorev" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FabrikaDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminTb" EntityType="Self.AdminTb" />
+    <EntitySet Name="CagriTb" EntityType="Self.CagriTb" />
+    <EntitySet Name="DepartmanTb" EntityType="Self.DepartmanTb" />
+    <EntitySet Name="GorevDetayTb" EntityType="Self.GorevDetayTb" />
+    <EntitySet Name="GorevTb" EntityType="Self.GorevTb" />
+    <EntitySet Name="MusteriTb" EntityType="Self.MusteriTb" />
+    <AssociationSet Name="FK_CagriTb_MusteriTb" Association="Self.FK_CagriTb_MusteriTb">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="CagriTb" EntitySet="CagriTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GorevDetayTb_GorevTb" Association="Self.FK_GorevDetayTb_GorevTb">
+      <End Role="GorevTb" EntitySet="GorevTb" />
+      <End Role="GorevDetayTb" EntitySet="GorevDetayTb" />
+    </AssociationSet>
+    <EntitySet Name="CagriDetayTb" EntityType="FabrikaDbModel.CagriDetayTb" />
+    <AssociationSet Name="FK_CagriDetayTb_CagriTb" Association="FabrikaDbModel.FK_CagriDetayTb_CagriTb">
+      <End Role="CagriTb" EntitySet="CagriTb" />
+      <End Role="CagriDetayTb" EntitySet="CagriDetayTb" />
+    </AssociationSet>
+    <EntitySet Name="MesajlarTb" EntityType="FabrikaDbModel.MesajlarTb" />
+    <AssociationSet Name="FK_MesajlarTb_MusteriTb" Association="FabrikaDbModel.FK_MesajlarTb_MusteriTb">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="MesajlarTb" EntitySet="MesajlarTb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesajlarTb_MusteriTb1" Association="FabrikaDbModel.FK_MesajlarTb_MusteriTb1">
+      <End Role="MusteriTb" EntitySet="MusteriTb" />
+      <End Role="MesajlarTb" EntitySet="MesajlarTb" />
+    </AssociationSet>
+    <EntitySet Name="PersonelBilgileriTb" EntityType="FabrikaDbModel.PersonelBilgileriTb" />
+  </EntityContainer>
+  <EntityType Name="CagriDetayTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cagri" Type="Int32" />
+    <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <Property Name="Saat" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="CagriTb" Relationship="FabrikaDbModel.FK_CagriDetayTb_CagriTb" FromRole="CagriDetayTb" ToRole="CagriTb" />
+  </EntityType>
+  <Association Name="FK_CagriDetayTb_CagriTb">
+    <End Type="FabrikaDbModel.CagriTb" Role="CagriTb" Multiplicity="0..1" />
+    <End Type="FabrikaDbModel.CagriDetayTb" Role="CagriDetayTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CagriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CagriDetayTb">
+        <PropertyRef Name="Cagri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MesajlarTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gonderen" Type="Int32" />
+    <Property Name="Alici" Type="Int32" />
+    <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <Property Name="Durum" Type="Boolean" />
+    <NavigationProperty Name="MusteriTb" Relationship="FabrikaDbModel.FK_MesajlarTb_MusteriTb" FromRole="MesajlarTb" ToRole="MusteriTb" />
+    <NavigationProperty Name="MusteriTb1" Relationship="FabrikaDbModel.FK_MesajlarTb_MusteriTb1" FromRole="MesajlarTb" ToRole="MusteriTb" />
+  </EntityType>
+  <Association Name="FK_MesajlarTb_MusteriTb">
+    <End Type="FabrikaDbModel.MusteriTb" Role="MusteriTb" Multiplicity="0..1" />
+    <End Type="FabrikaDbModel.MesajlarTb" Role="MesajlarTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesajlarTb">
+        <PropertyRef Name="Gonderen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesajlarTb_MusteriTb1">
+    <End Type="FabrikaDbModel.MusteriTb" Role="MusteriTb" Multiplicity="0..1" />
+    <End Type="FabrikaDbModel.MesajlarTb" Role="MesajlarTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusteriTb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesajlarTb">
+        <PropertyRef Name="Alici" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PersonelBilgileriTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoyAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Pozisyon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Departman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Yonetici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ucret" Type="Int32" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="Boolean" />
+  </EntityType>
+</Schema>
